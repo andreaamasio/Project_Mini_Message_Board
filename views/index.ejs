@@ -1,6 +1,15 @@
 <html>
-  <head></head>
+  <head>
+    <title><&=title&></title>
+  </head>
   <body>
-    <h1>Hello World</h1>
+    <% messages.forEach((message)=>{ %>
+    <div>
+      <div class="username"><%= message.user %></div>
+      <div class="addedTime"><%= message.added %></div>
+      <div class="messageText"><%= message.text %></div>
+    </div>
+
+    <% }) %>
   </body>
 </html>
