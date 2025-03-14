@@ -5,10 +5,10 @@ const { messages } = require("./indexRouter")
 const messageDetailsRouter = Router()
 messageDetailsRouter.use(express.urlencoded({ extended: true }))
 
-messageDetailsRouter.get("/", (req, res) => {
+messageDetailsRouter.get("/:id", (req, res) => {
   const messageID = Number(req.params.id)
   const message = messages[messageID]
-  console.log(messageID)
+  console.log(message)
   if (!message) {
     return res.status(404).send("Message not found")
   }
