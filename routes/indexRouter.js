@@ -1,6 +1,8 @@
 const { Router } = require("express")
+const express = require("express")
 //const { getAuthorById } = require("../controllers/indexController")
 const indexRouter = Router()
+indexRouter.use(express.urlencoded({ extended: true }))
 const messages = [
   {
     text: "Hi there!",
@@ -17,5 +19,14 @@ const messages = [
 indexRouter.get("/", (req, res) => {
   res.render("index", { title: "Mini message board", messages: messages })
 })
+indexRouter.post("/new", (req, res) => {
+  messages.push({
+    text: req.body.new_message,
+    user: req.body.user,
+    added: new Date(),
+  })
 
-module.exports = indexRouter
+  res.redirect("/")
+})
+
+module.exports = { indexRouter, messages }

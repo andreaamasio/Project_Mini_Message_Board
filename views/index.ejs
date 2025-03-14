@@ -1,15 +1,16 @@
 <html>
   <head>
-    <title><&=title&></title>
+    <title><%= title %></title>
   </head>
   <body>
-    <% messages.forEach((message)=>{ %>
-    <div>
+    <% messages.forEach((message,index)=>{ %>
+    <div class="message_board">
       <div class="username"><%= message.user %></div>
       <div class="addedTime"><%= message.added %></div>
       <div class="messageText"><%= message.text %></div>
     </div>
-
+    <a href="/message-details/<%= index %>">Open</a>
     <% }) %>
+    <a href="/new">Post New Message</a>
   </body>
 </html>
