@@ -1,5 +1,7 @@
 <html>
-  <head></head>
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
   <body>
     <form method="POST" action="/new">
       <header>Send new message</header>
@@ -8,15 +10,13 @@
         <input type="text" id="user" name="user" />
       </label>
       <label for="new_message"
-        >Your message:
-        <textarea
+        >Your message:<textarea
           id="new_message"
           name="new_message"
           rows="4"
           cols="50"
           placeholder="write your message here"
-        >
-        </textarea>
+        ></textarea>
       </label>
       <button type="submit">Submit</button>
     </form>

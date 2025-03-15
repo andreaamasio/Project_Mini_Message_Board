@@ -1,6 +1,7 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <% messages.forEach((message,index)=>{ %>
@@ -8,8 +9,9 @@
       <div class="username"><%= message.user %></div>
       <div class="addedTime"><%= message.added %></div>
       <div class="messageText"><%= message.text %></div>
+      <div><a href="/message-details/<%= index %>">Open</a></div>
     </div>
-    <a href="/message-details/<%= index %>">Open</a>
+
     <% }) %>
     <a href="/new">Post New Message</a>
   </body>
